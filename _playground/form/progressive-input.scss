@@ -1,0 +1,53 @@
+---
+
+---
+
+$black:         #000;
+$black50:       lighten($black, 50%);
+$black70:       lighten($black, 70%);
+$black90:       lighten($black, 90%);
+$white:         #fff;
+
+body {
+  background: lighten($black, 95%);
+  font-family: sans-serif;
+}
+
+input {
+  background: $white;
+  border: 0;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  z-index:1;
+
+  &:focus {
+    border-left: 2px solid $black90;
+    outline: none;
+  }
+}
+
+input::placeholder {
+  color: $black90;
+}
+
+.filled {
+  background: transparent;
+
+  &:hover {
+    background: transparentize($white, .7);
+  }
+}
+
+.empty {
+  z-index:0;
+  box-shadow: 0 0 8px 0 $black70;
+
+  &:focus {
+    border-left-color: lightblue;
+  }
+}
